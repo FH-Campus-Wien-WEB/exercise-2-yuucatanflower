@@ -1,41 +1,166 @@
-@import url(base.css);
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #292828;
+    margin: 0;
+    padding: 40px;
+    color: #292828;
+}
 
 h1 {
-  font-size: 200%;
-  margin: 8px 0px;
+    font-weight: bold;
+    margin: 20px 0 40px 0;
+    text-align: center;
+    color: #2c3e50;
 }
+
+h2 {
+    color: #1a1a1a;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+h3 {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: #444;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/*information about the movie*/
+.movie-content {
+    flex: 1; /* allows text to fill the remaining space */
+}
+
+/* article styling */
+article {
+    display: flex; /* side-by-side layout */
+    gap: 30px; /* space between the image and the text */
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 1000px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.78);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth transition for hover */
+}
+
+article:hover {
+    transform: translateY(-5px); /* makes card lift up */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.plot-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.stats {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* genre spans */
+.genre {
+    /* inline-block to apply padding and margins properly */
+    display: inline-block;
+
+    background-color: #292828;
+    color: white;
+    padding: 5px 12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    border-radius: 20px;
+    border: 1px solid #eae6e6;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.genre:hover {
+    background-color: #a987c6; /* changes color on hover */
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/*sidebar layout*/
+.poster-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /*matching image width*/
+    flex-shrink: 0;
+}
+
+
+
+.ratings-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.rating-box {
+    flex: 1;
+    background-color: #292828;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #a987c6;
+}
+
+.rating-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.rating-score {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
 
 img {
-  border-radius: 12px;
+    width: 300px;
+    height: auto;
+    align-self: flex-start; /* prevents stretching to the container's height */
+    flex-shrink: 0;      /* keeps the image from getting squished */
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 2vw;
-}
+/*  for smaller screens */
+@media (max-width: 768px) {
+    article {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-span {
-  margin-right: 4px;
-}
-
-.genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-}
-
-select {
-  width: 100%;
-}
-
-textarea {
-  width: 100%;
+    img {
+        width: 100%;
+        max-width: 400px;
+        align-self: center;
+    }
 }
